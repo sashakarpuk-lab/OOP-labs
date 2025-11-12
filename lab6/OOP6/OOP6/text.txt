@@ -1,0 +1,14 @@
+SELECT 
+    operator,
+    POSITION('ov' IN operator) AS PositionFunc,
+    INSTR(operator, 'ov') AS InstrFunc,
+    LOCATE('ov', operator) AS LocateFunc,
+    LOCATE('o', operator, 3) AS LocateFromPos,
+    FIND_IN_SET('Ivanov', 'Petrov,Sidorov,Ivanov') AS FindInSetFunc,
+    FIELD(operator, 'Petrov','Ivanov','Sidorov') AS FieldFunc,
+    LEFT(operator, 3) AS Left3,
+    RIGHT(operator, 3) AS Right3,
+    MID(operator, 2, 4) AS MidExample,
+    SUBSTRING(operator, 2, 5) AS SubstringExample,
+    SUBSTRING_INDEX(operator, 'o', 1) AS SubstringIndexExample
+FROM Measurement;
